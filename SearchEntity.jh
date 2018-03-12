@@ -1,0 +1,5 @@
+entity Search{
+    query String,
+    timestamp Long,
+    userId Long
+}

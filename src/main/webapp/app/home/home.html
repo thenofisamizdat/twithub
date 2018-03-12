@@ -1,0 +1,71 @@
+<div ng-cloak>
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <h2>Welcome to TwitHub, enter your Search Term below</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 no-padding-right">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group pull-right" >
+                    <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="Query">
+                    <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8">
+
+            <!--GitHub Projects-->
+            <span style="padding-left: 2%; font-weight: bold;">GitHub Projects</span>
+            <div class="table-responsive">
+                <table class="jh-table table table-striped">
+                    <thead>
+                    <tr>
+
+                    </tr>
+                    </thead>
+                <tbody>
+                    <tr ng-repeat="project in vm.searches track by project.id">
+                        <td ng-click="vm.selectProject(project.id)">{{project.project.name}}</a></td>
+                        <td style="font-size: 10px;">by {{project.project.owner.login}}</td>
+                        <td><div class="glyphicon glyphicon-plus-sign" ng-click="vm.viewAllGit(project.id)"></div> </td>
+                        <td><pre>{{project.all}}</pre></td>
+                    </tr>
+
+                </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <!--Related Tweets-->
+            <span style="padding-left: 5%; font-weight: bold;">Related Tweets</span>
+            <div class="table-responsive">
+                <table class="jh-table table table-striped">
+                    <thead>
+                    <tr>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="tweets in vm.tweets">
+                        <td><img class="logo-img" src="{{tweets.profileImageUrl}}"></td>
+                        <td style="font-weight: 11px;">{{tweets.text}}</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

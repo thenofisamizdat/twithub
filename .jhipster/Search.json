@@ -1,0 +1,23 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "query",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timestamp",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20180311141327",
+    "entityTableName": "search",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}
