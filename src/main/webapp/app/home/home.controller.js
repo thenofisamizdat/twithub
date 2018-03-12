@@ -21,6 +21,8 @@
         vm.login = login;
         vm.viewAllGit = viewAllGit;
 
+        vm.viewAllTweet = viewAllTweet;
+        vm.allTweet = "";
         login();
 
         function login(){
@@ -36,6 +38,15 @@
             if (vm.tweets.length == 0){
                 vm.tweets[0] = {};
                 vm.tweets[0].text = "No Tweets found for " + vm.searches[id].project.name;
+            }
+        }
+
+        function viewAllTweet(fullTweet){
+            if (vm.allTweet) {
+                vm.allTweet = "";
+            }
+            else {
+                vm.allTweet = fullTweet;
             }
         }
 

@@ -24,7 +24,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6">
 
             <!--GitHub Projects-->
             <span style="padding-left: 2%; font-weight: bold;">GitHub Projects</span>
@@ -39,8 +39,8 @@
                     <tr ng-repeat="project in vm.searches track by project.id">
                         <td ng-click="vm.selectProject(project.id)">{{project.project.name}}</a></td>
                         <td style="font-size: 10px;">by {{project.project.owner.login}}</td>
-                        <td><div class="glyphicon glyphicon-plus-sign" ng-click="vm.viewAllGit(project.id)"></div> </td>
-                        <td><pre>{{project.all}}</pre></td>
+                        <td><div class="glyphicon glyphicon-plus-sign" ng-click="vm.selectProject(project.id)"></div> </td>
+                        <td><pre style="width:200px;">{{project.project}}</pre></td>
                     </tr>
 
                 </tbody>
@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6">
             <!--Related Tweets-->
             <span style="padding-left: 5%; font-weight: bold;">Related Tweets</span>
             <div class="table-responsive">
@@ -60,8 +60,10 @@
                     </thead>
                     <tbody>
                     <tr ng-repeat="tweets in vm.tweets">
-                        <td><img class="logo-img" src="{{tweets.profileImageUrl}}"></td>
+                        <td><img class="logo-img" title="{{tweets.user.name}}" src="{{tweets.profileImageUrl}}"></td>
                         <td style="font-weight: 11px;">{{tweets.text}}</a></td>
+                        <td><div class="glyphicon glyphicon-plus-sign" ng-click="vm.viewAllTweet(tweets)"></div> </td>
+                        <td><pre style="width:200px;">{{tweets}}</pre></td>
                     </tr>
                     </tbody>
                 </table>
